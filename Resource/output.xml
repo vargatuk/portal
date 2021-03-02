@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.7.5 on linux)" generated="20210302 10:21:39.538" rpa="false">
+<suite id="s1" name="Categories Procurement" source="/home/nesterpna/robot-scripts/portal/Resource/tests/categories_procurement.robot">
+<test id="s1-t1" name="Перейти на вкладку категорії закупівель">
+<kw name="Start TestCase" library="common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210302 10:21:39.703" level="INFO">Opening browser 'Chrome' to base url 'https://staging.prozorro.gov.ua'.</msg>
+<status status="PASS" starttime="20210302 10:21:39.703" endtime="20210302 10:21:41.659"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210302 10:21:41.659" endtime="20210302 10:21:41.981"></status>
+</kw>
+<status status="PASS" starttime="20210302 10:21:39.702" endtime="20210302 10:21:41.982"></status>
+</kw>
+<kw name="Вибір і перехід категорії">
+<arguments>
+<arg>Будівництво</arg>
+</arguments>
+<msg timestamp="20210302 10:21:41.991" level="FAIL">No keyword with name 'Вибір і перехід категорії' found.</msg>
+<status status="FAIL" starttime="20210302 10:21:41.990" endtime="20210302 10:21:41.991"></status>
+</kw>
+<kw name="Finish TestCase" library="common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210302 10:21:41.992" endtime="20210302 10:21:42.048"></status>
+</kw>
+<status status="PASS" starttime="20210302 10:21:41.991" endtime="20210302 10:21:42.048"></status>
+</kw>
+<status status="FAIL" starttime="20210302 10:21:39.702" endtime="20210302 10:21:42.049" critical="yes">No keyword with name 'Вибір і перехід категорії' found.</status>
+</test>
+<test id="s1-t2" name="Перейти на вкладку Будівництво">
+<kw name="Start TestCase" library="common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210302 10:21:42.051" level="INFO">Opening browser 'Chrome' to base url 'https://staging.prozorro.gov.ua'.</msg>
+<status status="PASS" starttime="20210302 10:21:42.051" endtime="20210302 10:21:43.961"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210302 10:21:43.962" endtime="20210302 10:21:44.290"></status>
+</kw>
+<status status="PASS" starttime="20210302 10:21:42.050" endtime="20210302 10:21:44.291"></status>
+</kw>
+<kw name="Вибір і перехід категорії">
+<arguments>
+<arg>Будівництво</arg>
+</arguments>
+<msg timestamp="20210302 10:21:44.298" level="FAIL">No keyword with name 'Вибір і перехід категорії' found.</msg>
+<status status="FAIL" starttime="20210302 10:21:44.298" endtime="20210302 10:21:44.298"></status>
+</kw>
+<kw name="Finish TestCase" library="common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210302 10:21:44.299" endtime="20210302 10:21:44.356"></status>
+</kw>
+<status status="PASS" starttime="20210302 10:21:44.299" endtime="20210302 10:21:44.356"></status>
+</kw>
+<status status="FAIL" starttime="20210302 10:21:42.049" endtime="20210302 10:21:44.356" critical="yes">No keyword with name 'Вибір і перехід категорії' found.</status>
+</test>
+<test id="s1-t3" name="Перейти на вкладку Медицина">
+<kw name="Start TestCase" library="common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210302 10:21:44.359" level="INFO">Opening browser 'Chrome' to base url 'https://staging.prozorro.gov.ua'.</msg>
+<status status="PASS" starttime="20210302 10:21:44.359" endtime="20210302 10:21:46.273"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210302 10:21:46.274" endtime="20210302 10:21:46.711"></status>
+</kw>
+<status status="PASS" starttime="20210302 10:21:44.358" endtime="20210302 10:21:46.711"></status>
+</kw>
+<kw name="Вибір і перехід категорії">
+<arguments>
+<arg>Медицина</arg>
+</arguments>
+<msg timestamp="20210302 10:21:46.720" level="FAIL">No keyword with name 'Вибір і перехід категорії' found.</msg>
+<status status="FAIL" starttime="20210302 10:21:46.720" endtime="20210302 10:21:46.720"></status>
+</kw>
+<kw name="Finish TestCase" library="common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210302 10:21:46.723" endtime="20210302 10:21:46.780"></status>
+</kw>
+<status status="PASS" starttime="20210302 10:21:46.721" endtime="20210302 10:21:46.780"></status>
+</kw>
+<status status="FAIL" starttime="20210302 10:21:44.357" endtime="20210302 10:21:46.780" critical="yes">No keyword with name 'Вибір і перехід категорії' found.</status>
+</test>
+<test id="s1-t4" name="Перейти на вкладку Меблі">
+<kw name="Start TestCase" library="common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210302 10:21:46.783" level="INFO">Opening browser 'Chrome' to base url 'https://staging.prozorro.gov.ua'.</msg>
+<status status="PASS" starttime="20210302 10:21:46.783" endtime="20210302 10:21:48.727"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210302 10:21:48.727" endtime="20210302 10:21:49.067"></status>
+</kw>
+<status status="PASS" starttime="20210302 10:21:46.782" endtime="20210302 10:21:49.067"></status>
+</kw>
+<kw name="Вибір і перехід категорії">
+<arguments>
+<arg>Меблі</arg>
+</arguments>
+<msg timestamp="20210302 10:21:49.073" level="FAIL">No keyword with name 'Вибір і перехід категорії' found.</msg>
+<status status="FAIL" starttime="20210302 10:21:49.073" endtime="20210302 10:21:49.073"></status>
+</kw>
+<kw name="Finish TestCase" library="common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210302 10:21:49.077" endtime="20210302 10:21:49.134"></status>
+</kw>
+<status status="PASS" starttime="20210302 10:21:49.076" endtime="20210302 10:21:49.135"></status>
+</kw>
+<status status="FAIL" starttime="20210302 10:21:46.781" endtime="20210302 10:21:49.135" critical="yes">No keyword with name 'Вибір і перехід категорії' found.</status>
+</test>
+<test id="s1-t5" name="Перейти на вкладку Комп'ютерна техніка">
+<kw name="Start TestCase" library="common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210302 10:21:49.138" level="INFO">Opening browser 'Chrome' to base url 'https://staging.prozorro.gov.ua'.</msg>
+<status status="PASS" starttime="20210302 10:21:49.137" endtime="20210302 10:21:50.930"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210302 10:21:50.931" endtime="20210302 10:21:51.256"></status>
+</kw>
+<status status="PASS" starttime="20210302 10:21:49.137" endtime="20210302 10:21:51.256"></status>
+</kw>
+<kw name="Вибір і перехід категорії">
+<arguments>
+<arg>Комп'ютерна техніка</arg>
+</arguments>
+<msg timestamp="20210302 10:21:51.262" level="FAIL">No keyword with name 'Вибір і перехід категорії' found.</msg>
+<status status="FAIL" starttime="20210302 10:21:51.262" endtime="20210302 10:21:51.263"></status>
+</kw>
+<kw name="Finish TestCase" library="common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210302 10:21:51.266" endtime="20210302 10:21:51.325"></status>
+</kw>
+<status status="PASS" starttime="20210302 10:21:51.264" endtime="20210302 10:21:51.325"></status>
+</kw>
+<status status="FAIL" starttime="20210302 10:21:49.136" endtime="20210302 10:21:51.325" critical="yes">No keyword with name 'Вибір і перехід категорії' found.</status>
+</test>
+<test id="s1-t6" name="Перейти на вкладку Транспорт та запчастини">
+<kw name="Start TestCase" library="common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210302 10:21:51.327" level="INFO">Opening browser 'Chrome' to base url 'https://staging.prozorro.gov.ua'.</msg>
+<status status="PASS" starttime="20210302 10:21:51.327" endtime="20210302 10:21:53.351"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210302 10:21:53.352" endtime="20210302 10:21:53.660"></status>
+</kw>
+<status status="PASS" starttime="20210302 10:21:51.326" endtime="20210302 10:21:53.661"></status>
+</kw>
+<kw name="Вибір і перехід категорії">
+<arguments>
+<arg>Транспорт та запчастини</arg>
+</arguments>
+<msg timestamp="20210302 10:21:53.668" level="FAIL">No keyword with name 'Вибір і перехід категорії' found.</msg>
+<status status="FAIL" starttime="20210302 10:21:53.668" endtime="20210302 10:21:53.669"></status>
+</kw>
+<kw name="Finish TestCase" library="common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210302 10:21:53.671" endtime="20210302 10:21:53.729"></status>
+</kw>
+<status status="PASS" starttime="20210302 10:21:53.670" endtime="20210302 10:21:53.729"></status>
+</kw>
+<status status="FAIL" starttime="20210302 10:21:51.326" endtime="20210302 10:21:53.730" critical="yes">No keyword with name 'Вибір і перехід категорії' found.</status>
+</test>
+<test id="s1-t7" name="Перейти на вкладку Транспорт та запчастини">
+<kw name="Start TestCase" library="common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210302 10:21:53.732" level="INFO">Opening browser 'Chrome' to base url 'https://staging.prozorro.gov.ua'.</msg>
+<status status="PASS" starttime="20210302 10:21:53.732" endtime="20210302 10:21:55.583"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210302 10:21:55.584" endtime="20210302 10:21:55.908"></status>
+</kw>
+<status status="PASS" starttime="20210302 10:21:53.731" endtime="20210302 10:21:55.908"></status>
+</kw>
+<kw name="Вибір і перехід категорії">
+<arguments>
+<arg>Транспорт та запчастини</arg>
+</arguments>
+<msg timestamp="20210302 10:21:55.915" level="FAIL">No keyword with name 'Вибір і перехід категорії' found.</msg>
+<status status="FAIL" starttime="20210302 10:21:55.915" endtime="20210302 10:21:55.916"></status>
+</kw>
+<kw name="Finish TestCase" library="common" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210302 10:21:55.917" endtime="20210302 10:21:55.975"></status>
+</kw>
+<status status="PASS" starttime="20210302 10:21:55.916" endtime="20210302 10:21:55.975"></status>
+</kw>
+<status status="FAIL" starttime="20210302 10:21:53.730" endtime="20210302 10:21:55.976" critical="yes">No keyword with name 'Вибір і перехід категорії' found.</status>
+</test>
+<status status="FAIL" starttime="20210302 10:21:39.539" endtime="20210302 10:21:55.977"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="7">Critical Tests</stat>
+<stat pass="0" fail="7">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="7" id="s1" name="Categories Procurement">Categories Procurement</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210302 10:21:53.730" level="WARN">Multiple test cases with name 'Перейти на вкладку Транспорт та запчастини' executed in test suite 'Categories Procurement'.</msg>
+</errors>
+</robot>
