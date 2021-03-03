@@ -1,7 +1,7 @@
 *** Settings ***
-Resource   /home/nesterpna/robot-scripts/portal/Resource/page_object/main.robot
-Resource   /home/nesterpna/robot-scripts/portal/Resource/page_object/common.robot
-Resource   /home/nesterpna/robot-scripts/portal/Resource/page_object/news_page.robot
+Resource   ../page_object/main.robot
+Resource   ../page_object/common.robot
+Resource   ../page_object/news_page.robot
 
 Test Setup       Start TestCase
 Test Teardown    Finish TestCase
