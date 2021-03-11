@@ -13,3 +13,9 @@ Start TestCase
 
 Finish TestCase
     Close Browser
+
+Перевірка сторінки після переходу
+    [Documentation]   Порівняння фактичної з очікуваної сторінки
+    [Arguments]   ${page_url}   ${msg}
+    ${url}=     get location
+    Should Be True    '${page_url}' in '${url}'    msg=${msg}
