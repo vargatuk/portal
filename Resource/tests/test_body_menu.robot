@@ -14,9 +14,9 @@ Test Teardown    Finish TestCase
     Проверка страницы после перехода    https://staging.prozorro.gov.ua/about1    msg='післ переходу на сторінку не співпадає url'
     #Should Be True   '${url}' == 'https://staging.prozorro.gov.ua/about1'    msg='післ переходу на сторінку не співпадає url'
 
-##Перейти на вкладку Bug bounty
-#    Вибір і перехід по нижньому меню    Bug bounty
-#
+Перейти на вкладку Bug bounty
+    Вибір і перехід по нижньому меню    Bug bounty
+
 ##Перейти на вкладку Інформаційна безпека
 #    Вибір і перехід по нижньому меню    Інформаційна безпека
 #

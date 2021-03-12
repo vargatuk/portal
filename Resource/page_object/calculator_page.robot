@@ -3,15 +3,15 @@ Library     SeleniumLibrary
 
 
 *** Variables ***
-${CALCULATOR_URL}    https://cep.kse.ua/gaz/
-${locator.title}                    xpath=//div[@class='mdl-layout__drawer']
+${cep_URL}    https://cep.kse.ua/gaz/
+${locator.mdl-layout-spacer}                    xpath=//div[@class='mdl-layout-spacer']
 
 
 
 *** Keywords ***
 Очікувваний результат Калькулятор вартості газу на сторінці
     [Documentation]    Перевіряємо інформації на сторінці
-    Wait until element is visible    ${locator.title}    timeout=20
+    Wait until element is visible    ${locator.mdl-layout-spacer}    timeout=20
 
 Url страницы
-    [RETURN]    ${CALCULATOR_URL}
+    [RETURN]    ${cep_URL}
