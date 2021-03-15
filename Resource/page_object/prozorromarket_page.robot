@@ -9,9 +9,9 @@ ${locator.container error404}                    xpath=//div[@class='container e
 
 
 *** Keywords ***
-Очікувваний результат Prozorro Market на сторінці
+Очікувваний результат Маркет на сторінці
     [Documentation]    Перевіряємо інформації на сторінці
     Wait until element is visible    ${locator.container error404}    timeout=20
 
 Url страницы
-    [RETURN]    ${PROZORROMARKET_URL}
+    [RETURN]    ${PROZORROMARKET_URL}bro95card26dino17
