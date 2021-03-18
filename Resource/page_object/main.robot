@@ -4,9 +4,7 @@ Library     SeleniumLibrary
 
 *** Variables ***
 ${MAIN_URL}    https://staging.prozorro.gov.ua/
-#${locator.email}                    css=[name="email"]
-#${locator.password}                 css=[name="password"]
-#${locator.submit_btn}               css=[id="submit_button"]
+
 
 
 *** Keywords ***
