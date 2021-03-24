@@ -1,10 +1,10 @@
 *** Settings ***
 Resource   ../page_object/main.robot
 Resource   ../page_object/common.robot
-Resource   ../page_object/news_page.robot                 #Новин
-Resource   ../page_object/calendar_page.robot             #Події
-Resource   ../page_object/prozorromarket_page.robot       #Prozorro Market
-Resource   ../page_object/infobox_page.robot              #Інфобокс
+Resource   ../page_object/news_page.robot
+Resource   ../page_object/calendar_page.robot
+Resource   ../page_object/prozorromarket_page.robot
+Resource   ../page_object/infobox_page.robot
 
 
 Test Setup       Start TestCase

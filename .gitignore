@@ -2,4 +2,4 @@
 *.xml
 *.jpg
 *.png
-test_python.py
+Resource/tests/test_python.py

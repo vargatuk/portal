@@ -2,20 +2,20 @@
 Resource   ../page_object/main.robot
 Resource   ../page_object/common.robot
 Resource   ../page_object/news_page.robot
-Resource   ../page_object/about_page.robot                              #Про нас
-Resource   ../page_object/bugbounty_page.robot                          #Bug bounty
-Resource   ../page_object/information_security_page.robot               #Інформаційна безпека
-Resource   ../page_object/documents_page.robot                          #Документи ДП "ПРОЗОРРО"
-Resource   ../page_object/submit_page.robot                             #Подати офіційний лист з ЕЦП
-Resource   ../page_object/roadmap_page.robot                            #Розвиток системи
-Resource   ../page_object/majdanchiki_page.robot                        #Майданчики Prozorro
-Resource   ../page_object/partners_page.robot                           #Друзі Prozorro
-Resource   ../page_object/organizaciya_page.robot                       #Prozorro Market інструмент ЦЗО
-Resource   ../page_object/monitoring_page.robot                         #Моніторинг
-Resource   ../page_object/openprocurement_page.robot                    #Розробникам
-Resource   ../page_object/for_places.page.robot                         #Майданчикам
-Resource   ../page_object/zahist_page.robot                             #Захист учасників
-Resource   ../page_object/faq_page.robot                                #Запитання та відповіді
+Resource   ../page_object/about_page.robot
+Resource   ../page_object/bugbounty_page.robot
+Resource   ../page_object/information_security_page.robot
+Resource   ../page_object/documents_page.robot
+Resource   ../page_object/submit_page.robot
+Resource   ../page_object/roadmap_page.robot
+Resource   ../page_object/majdanchiki_page.robot
+Resource   ../page_object/partners_page.robot
+Resource   ../page_object/organizaciya_page.robot
+Resource   ../page_object/monitoring_page.robot
+Resource   ../page_object/openprocurement_page.robot
+Resource   ../page_object/for_places.page.robot
+Resource   ../page_object/zahist_page.robot
+Resource   ../page_object/faq_page.robot
 
 
 Test Setup       Start TestCase
