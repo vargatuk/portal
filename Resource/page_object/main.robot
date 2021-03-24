@@ -33,12 +33,20 @@ ${MAIN_URL}    https://staging.prozorro.gov.ua/
     Wait until element is visible    xpath=//button[contains(@class,'category-purchases__link')][contains(text(),'${children_category_text}')]    timeout=20
     CLICK ELEMENT      xpath=//button[contains(@class,'category-purchases__link')][contains(text(),'${children_category_text}')]
     Wait until element is visible    xpath=//p[@class='search-preview__item--text']    timeout=20
-    ${filter_text}=    GET TEXT      xpath=//p[@class='search-preview__item--text']
-    log to console    ${filter_text}
-    Should Be True   '${children_category_text}' in '${filter_text}'    msg='Після переходу на сторінку не співпадають назви вибрані'
+    ${count} =  Get Element Count   xpath=//p[@class='search-preview__item--text']
+    log to console    .
+    log to console    сколько категорий
+    log to console    ${count}
+    log to console    children
+    log to console    ${children_category_text}
+    FOR  ${index}  IN RANGE  ${count}
+       ${filter_text}=    GET TEXT      xpath=(//p[@class='search-preview__item--text'])[${index+1}]
+       Exit For Loop If    '${filter_text.split(' - ')[1]}' in '${children_category_text}'
+    END
+    Should Be True   '${filter_text.split(' - ')[-1]}' in '${children_category_text}'    msg='Після переходу на сторінку не співпадають назви вибрані'
 
-Вибір і перехід по статусам
-    [Documentation]    Обрати статус із фільтра
+Пошук статусу по назві
+    [Documentation]    Пошук статусу по назві
     [Arguments]   ${locator_text}
     GO TO   ${MAIN_URL}
     Wait until element is visible    xpath=//label[@for='status']
@@ -47,8 +55,8 @@ ${MAIN_URL}    https://staging.prozorro.gov.ua/
     CLICK ELEMENT      xpath=//ul[@class='filter-popup__preview-list filter-popup__preview-list_simple']//li[text()='${locator_text}']
     sleep    5
 
-Вибір і перехід по регіонам
-    [Documentation]    Обрати регіон із фільтра
+Пошук регіона по назві
+    [Documentation]    Пошук регіона по назві
     [Arguments]   ${locator_text}
     GO TO   ${MAIN_URL}
     Wait until element is visible    xpath=//label[@for='region']
@@ -57,8 +65,8 @@ ${MAIN_URL}    https://staging.prozorro.gov.ua/
     CLICK ELEMENT      xpath=//ul[@class='filter-popup__preview-list']//li[text()='${locator_text}']
     sleep    5
 
-Обрати тип закупівлі
-    [Documentation]    Обрати тип закупівлі
+Обрати закупівлю по типу
+    [Documentation]    Обрати закупівлю по типу
     [Arguments]   ${locator_text}
     GO TO   ${MAIN_URL}
     Wait until element is visible    xpath=//label[@for='proc_type']
@@ -67,14 +75,5 @@ ${MAIN_URL}    https://staging.prozorro.gov.ua/
     CLICK ELEMENT      xpath=//ul[@class='filter-popup__preview-list filter-popup__preview-list_simple']//li[text()='${locator_text}']
     sleep    5
 
-Обрати тип Замовник
-    [Documentation]    Обрати тип Замовник
-    [Arguments]   ${locator_text}
-    GO TO   ${MAIN_URL}
-    Wait until element is visible    xpath=//label[@for='edrpou']
-    CLICK ELEMENT      xpath=//label[@for='edrpou']
-    INPUT TEXT    xpath=//div[@class='filter-popup']    12345678
-    Wait until element is visible    xpath=//div[@class='filter-popup']    timeout=20
-    CLICK ELEMENT      xpath=//p[@class='search-preview__item--text']
-    sleep    5
+
 
