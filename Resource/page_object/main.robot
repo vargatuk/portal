@@ -43,7 +43,7 @@ ${MAIN_URL}    https://staging.prozorro.gov.ua/
        ${filter_text}=    GET TEXT      xpath=(//p[@class='search-preview__item--text'])[${index+1}]
        Exit For Loop If    '${filter_text.split(' - ')[1]}' in '${children_category_text}'
     END
-    Should Be True   '${filter_text.split(' - ')[-1]}' in '${children_category_text}'    msg='Після переходу на сторінку не співпадають назви вибрані'
+    Should Be True   '${filter_text.split(' - ')[-1]}' in '${children_category_text}'    msg='Після переходу на сторінку не співпадають вибрані назви'
 
 Пошук статусу по назві
     [Documentation]    Пошук статусу по назві
@@ -64,6 +64,7 @@ ${MAIN_URL}    https://staging.prozorro.gov.ua/
     Wait until element is visible    xpath=//ul[@class='filter-popup__preview-list']//li[text()='${locator_text}']    timeout=20
     CLICK ELEMENT      xpath=//ul[@class='filter-popup__preview-list']//li[text()='${locator_text}']
     sleep    5
+
 
 Обрати закупівлю по типу
     [Documentation]    Обрати закупівлю по типу

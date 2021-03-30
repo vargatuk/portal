@@ -1,6 +1,7 @@
 *** Settings ***
 Resource   ../page_object/main.robot
 Resource   ../page_object/common.robot
+Resource   ../page_object/region_page.robot
 
 
 
@@ -11,6 +12,8 @@ Test Teardown    Finish TestCase
 *** Test Cases ***
 Вибір регіона в блоці пошуку
     Пошук регіона по назві    місто Севастополь
+    #Перевірка сторінки після переходу    region    msg='некоректне посилання'
+    #Очікувваний результат місто Севастополь відображається на сторінці
 
 Вибір регіона в блоці пошуку
     Пошук регіона по назві    місто Київ
