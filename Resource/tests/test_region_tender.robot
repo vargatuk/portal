@@ -1,7 +1,7 @@
 *** Settings ***
 Resource   ../page_object/main.robot
 Resource   ../page_object/common.robot
-Resource   ../page_object/region_page.robot
+
 
 
 

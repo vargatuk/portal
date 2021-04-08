@@ -1,17 +1,7 @@
 *** Settings ***
 Resource   ../page_object/main.robot
 Resource   ../page_object/common.robot
-Resource   ../page_object/active_enquiries_page.robot
-Resource   ../page_object/active_tendering_page.robot
-Resource   ../page_object/active_pre_qualification_page.robot
-Resource   ../page_object/active_pre-qualification_stand-still.robot
-Resource   ../page_object/active_auction.robot
-Resource   ../page_object/active_qualification.robot
-Resource   ../page_object/active_qualification_stand-still.robot
-Resource   ../page_object/active_awarded.robot
-Resource   ../page_object/complete.robot
-Resource   ../page_object/cancelled.robot
-Resource   ../page_object/unsuccessful.robot
+
 
 
 
@@ -40,10 +30,22 @@ Test Teardown    Finish TestCase
     Перевірка сторінки після переходу    stand-still    msg='некоректне посилання'
     Очікувваний результат статус Прекваліфікація (період оскарження) відображається на сторінці
 
-Вибір статусу в блоці пошуку
-    Пошук статусу по назві    Аукціон
-    Перевірка сторінки після переходу    auction    msg='некоректне посилання'
-    Очікувваний результат статус Аукціон відображається на сторінці
+------------------------------------------------------------------------------------------------------------------------
+
+Вібір статусу і порівняння результата в пошуці
+    [Documentation]    Статус "Аукціон"
+    [Tags]   Auction
+    Пошук статусу по назві       Аукціон
+    Порівняння тексту фільтра     Аукціон
+
+Вібір статусу і порівняння результата в видачі
+    [Documentation]    Статус "Аукціон"
+    [Tags]   Auction
+    ${url}=   Перехід на сторінку статусу     active.auction
+    Порівняння тексту фільтра статусу з текстом першого результату видачі    Аукціон
+
+------------------------------------------------------------------------------------------------------------------------
+
 
 Вибір статусу в блоці пошуку
     Пошук статусу по назві    Кваліфікація переможця

@@ -4,7 +4,7 @@ Library     SeleniumLibrary
 
 *** Variables ***
 ${MAIN_URL}    https://staging.prozorro.gov.ua/
-
+${searh_tender_url}    https://staging.prozorro.gov.ua/search/tender?status=
 
 
 *** Keywords ***
@@ -14,7 +14,7 @@ ${MAIN_URL}    https://staging.prozorro.gov.ua/
     GO TO   ${MAIN_URL}
     Wait until element is visible    xpath=//nav[@class='desktop-nav']//a[text()='${locator_text}']    timeout=20
     CLICK ELEMENT      xpath=//nav[@class='desktop-nav']//a[text()='${locator_text}']
-    sleep    5
+
 
 Вибір і перехід по нижньому меню
     [Documentation]    Вибір і перехід по нижньому меню
@@ -46,14 +46,11 @@ ${MAIN_URL}    https://staging.prozorro.gov.ua/
     Should Be True   '${filter_text.split(' - ')[-1]}' in '${children_category_text}'    msg='Після переходу на сторінку не співпадають вибрані назви'
 
 Пошук статусу по назві
-    [Documentation]    Пошук статусу по назві
-    [Arguments]   ${locator_text}
-    GO TO   ${MAIN_URL}
-    Wait until element is visible    xpath=//label[@for='status']
-    CLICK ELEMENT      xpath=//label[@for='status']
-    Wait until element is visible    xpath=//ul[@class='filter-popup__preview-list filter-popup__preview-list_simple']//li[text()='${locator_text}']    timeout=20
-    CLICK ELEMENT      xpath=//ul[@class='filter-popup__preview-list filter-popup__preview-list_simple']//li[text()='${locator_text}']
-    sleep    5
+    [Documentation]    Передаємо відповідний статус і переходимо на сторінку
+    [Arguments]    ${url_status}
+    ${url_with_status}=    Catenate    SEPARATOR=    ${searh_tender_url}${url_status}
+    Go To    ${url_with_status}
+    [RETURN]    ${url_with_status}
 
 Пошук регіона по назві
     [Documentation]    Пошук регіона по назві

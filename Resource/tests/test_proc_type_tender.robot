@@ -1,21 +1,7 @@
 *** Settings ***
 Resource   ../page_object/main.robot
 Resource   ../page_object/common.robot
-Resource   ../page_object/belowThreshold_page.robot
-Resource   ../page_object/aboveThresholdUA_page.robot
-Resource   ../page_object/aboveThresholdEU_page.robot
-Resource   ../page_object/negotiation_page.robot
-Resource   ../page_object/negotiation.quick_page.robot
-Resource   ../page_object/aboveThresholdUA_defense_page.robot
-Resource   ../page_object/competitiveDialogueUA_page.robot
-Resource   ../page_object/competitiveDialogueUA.stage2_page.robot
-Resource   ../page_object/competitiveDialogueEU_page.robot
-Resource   ../page_object/competitiveDialogueEU.stage2_page.robot
-Resource   ../page_object/esco_page.robot
-Resource   ../page_object/reporting_page.robot
-Resource   ../page_object/closeFrameworkAgreementUA_page.robot
-Resource   ../page_object/closeFrameworkAgreementSelectionUA_page.robot
-Resource   ../page_object/simple_defense_page.robot
+
 
 
 

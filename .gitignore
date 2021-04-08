@@ -3,3 +3,5 @@
 *.jpg
 *.png
 Resource/tests/test_python.py
+Resource/screenshot_and_logs
+
