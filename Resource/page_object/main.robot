@@ -5,6 +5,13 @@ Library     SeleniumLibrary
 *** Variables ***
 ${MAIN_URL}    https://staging.prozorro.gov.ua/
 ${searh_tender_url}    https://staging.prozorro.gov.ua/search/tender?status=
+${locator.click_status}    xpath=//label[@for='status']
+${locator.click_status_in_list}    xpath=//ul[@class='filter-popup__preview-list filter-popup__preview-list_simple']
+${locator.filter_content_text}    xpath=//p[@class='search-preview__item--text']
+${locator.click_region}    xpath=//label[@for='region']
+${locator.click_procurementMethodType}    xpath=//label[@for='proc_type']
+${locator.click_procuringentity}    xpath=//label[@for='edrpou']
+
 
 
 *** Keywords ***
@@ -45,33 +52,57 @@ ${searh_tender_url}    https://staging.prozorro.gov.ua/search/tender?status=
     END
     Should Be True   '${filter_text.split(' - ')[-1]}' in '${children_category_text}'    msg='Після переходу на сторінку не співпадають вибрані назви'
 
-Пошук статусу по назві
-    [Documentation]    Передаємо відповідний статус і переходимо на сторінку
+Перехід на сторінку статусу по урлу
+    [Documentation]    Передаємо відповідний статус і переходимо на сторінку по урлу
     [Arguments]    ${url_status}
     ${url_with_status}=    Catenate    SEPARATOR=    ${searh_tender_url}${url_status}
     Go To    ${url_with_status}
     [RETURN]    ${url_with_status}
 
-Пошук регіона по назві
-    [Documentation]    Пошук регіона по назві
+Пошук статусу по назві вибираємо вручну
+    [Documentation]    Пошук статусу по назві
     [Arguments]   ${locator_text}
     GO TO   ${MAIN_URL}
-    Wait until element is visible    xpath=//label[@for='region']
-    CLICK ELEMENT      xpath=//label[@for='region']
-    Wait until element is visible    xpath=//ul[@class='filter-popup__preview-list']//li[text()='${locator_text}']    timeout=20
-    CLICK ELEMENT      xpath=//ul[@class='filter-popup__preview-list']//li[text()='${locator_text}']
-    sleep    5
-
-
-Обрати закупівлю по типу
-    [Documentation]    Обрати закупівлю по типу
-    [Arguments]   ${locator_text}
-    GO TO   ${MAIN_URL}
-    Wait until element is visible    xpath=//label[@for='proc_type']
-    CLICK ELEMENT      xpath=//label[@for='proc_type']
+    Wait until element is visible    ${locator.click_status}
+    CLICK ELEMENT      ${locator.click_status}
     Wait until element is visible    xpath=//ul[@class='filter-popup__preview-list filter-popup__preview-list_simple']//li[text()='${locator_text}']    timeout=20
     CLICK ELEMENT      xpath=//ul[@class='filter-popup__preview-list filter-popup__preview-list_simple']//li[text()='${locator_text}']
     sleep    5
 
+Порівняння тексту фільтра
+    [Documentation]    В результаті відбувається порівняння з результатом видачі
+    [Arguments]    ${exepted_text}
+    ${filter_text}=     Get text    ${locator.filter_content_text}
+    Should Be Equal    first='${filter_text}'    second='${exepted_text}'   msg='При порівнянні текста фільтра виникла помилка, не відповідає фактичний результат очікуваному'
 
+Пошук регіона по назві вибираємо вручну
+    [Documentation]    Пошук регіона по назві вибираємо вручну та порівнюємо із заданим результатом
+    [Arguments]   ${locator_text}
+    GO TO   ${MAIN_URL}
+    Wait until element is visible    ${locator.click_region}
+    CLICK ELEMENT      ${locator.click_region}
+    Wait until element is visible    xpath=//ul[@class='filter-popup__preview-list']//li[text()='${locator_text}']    timeout=20
+    CLICK ELEMENT      xpath=//ul[@class='filter-popup__preview-list']//li[text()='${locator_text}']
+    sleep    5
+
+Пошук типу закупівлі вибираємо вручну
+    [Documentation]    Вибір виду закупівлі і порівняння з заданим результатом
+    [Arguments]   ${locator_text}
+    GO TO   ${MAIN_URL}
+    Wait until element is visible    ${locator.click_procurementMethodType}
+    CLICK ELEMENT      ${locator.click_procurementMethodType}
+    Wait until element is visible    xpath=//ul[@class='filter-popup__preview-list filter-popup__preview-list_simple']//li[text()='${locator_text}']    timeout=20
+    CLICK ELEMENT      xpath=//ul[@class='filter-popup__preview-list filter-popup__preview-list_simple']//li[text()='${locator_text}']
+    sleep    5
+
+Пошук по назві замовника
+    [Documentation]    Вибір та пошук замовника по коду ЄДРПОУ
+    [Arguments]   ${locator_text}
+    GO TO   ${MAIN_URL}
+    Wait until element is visible    ${locator.click_procuringentity}
+    CLICK ELEMENT      ${locator.click_procuringentity}
+    input text    xpath=//input[@id='edrpou']    Test Division Organization
+    Wait until element is visible    xpath=//li[@class='filter-popup__preview-item']    timeout=20
+    CLICK ELEMENT      xpath=//li[@class='filter-popup__preview-item']
+    sleep    5
 
