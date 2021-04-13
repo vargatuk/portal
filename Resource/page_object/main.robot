@@ -3,14 +3,16 @@ Library     SeleniumLibrary
 
 
 *** Variables ***
-${MAIN_URL}    https://staging.prozorro.gov.ua/
-${searh_tender_url}    https://staging.prozorro.gov.ua/search/tender?status=
-${locator.click_status}    xpath=//label[@for='status']
+${MAIN_URL}                        https://staging.prozorro.gov.ua/
+${searh_tender_url}                https://staging.prozorro.gov.ua/search/tender?status=
+${locator.click_status}            xpath=//label[@for='status']
 ${locator.click_status_in_list}    xpath=//ul[@class='filter-popup__preview-list filter-popup__preview-list_simple']
-${locator.filter_content_text}    xpath=//p[@class='search-preview__item--text']
-${locator.click_region}    xpath=//label[@for='region']
-${locator.click_procurementMethodType}    xpath=//label[@for='proc_type']
+${locator.filter_content_text}     xpath=//p[@class='search-preview__item--text']
+${locator.click_region}            xpath=//label[@for='region']
+${locator.click_procurement_method_type}    xpath=//label[@for='proc_type']
 ${locator.click_procuringentity}    xpath=//label[@for='edrpou']
+${locator.input_placeholder}        xpath=//input[@id='edrpou']
+${locator.click_label}              xpath=//li[@class='filter-popup__preview-item']
 
 
 
@@ -21,7 +23,6 @@ ${locator.click_procuringentity}    xpath=//label[@for='edrpou']
     GO TO   ${MAIN_URL}
     Wait until element is visible    xpath=//nav[@class='desktop-nav']//a[text()='${locator_text}']    timeout=20
     CLICK ELEMENT      xpath=//nav[@class='desktop-nav']//a[text()='${locator_text}']
-
 
 Вибір і перехід по нижньому меню
     [Documentation]    Вибір і перехід по нижньому меню
@@ -89,8 +90,8 @@ ${locator.click_procuringentity}    xpath=//label[@for='edrpou']
     [Documentation]    Вибір виду закупівлі і порівняння з заданим результатом
     [Arguments]   ${locator_text}
     GO TO   ${MAIN_URL}
-    Wait until element is visible    ${locator.click_procurementMethodType}
-    CLICK ELEMENT      ${locator.click_procurementMethodType}
+    Wait until element is visible    ${locator.click_procurement_method_type}
+    CLICK ELEMENT      ${locator.click_procurement_method_type}
     Wait until element is visible    xpath=//ul[@class='filter-popup__preview-list filter-popup__preview-list_simple']//li[text()='${locator_text}']    timeout=20
     CLICK ELEMENT      xpath=//ul[@class='filter-popup__preview-list filter-popup__preview-list_simple']//li[text()='${locator_text}']
     sleep    5
@@ -101,8 +102,8 @@ ${locator.click_procuringentity}    xpath=//label[@for='edrpou']
     GO TO   ${MAIN_URL}
     Wait until element is visible    ${locator.click_procuringentity}
     CLICK ELEMENT      ${locator.click_procuringentity}
-    input text    xpath=//input[@id='edrpou']    Test Division Organization
-    Wait until element is visible    xpath=//li[@class='filter-popup__preview-item']    timeout=20
-    CLICK ELEMENT      xpath=//li[@class='filter-popup__preview-item']
-    sleep    5
+    input text    ${locator.input_placeholder}    Test Division Organization
+    Wait until element is visible    ${locator.click_label}    timeout=20
+    CLICK ELEMENT      ${locator.click_label}
+
 
