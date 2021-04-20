@@ -1,21 +1,20 @@
 *** Settings ***
 Resource   ../page_object/main.robot
 Resource   ../page_object/common.robot
-Resource   ../page_object/news_page.robot
-Resource   ../page_object/about_page.robot
-Resource   ../page_object/bugbounty_page.robot
-Resource   ../page_object/information_security_page.robot
-Resource   ../page_object/documents_page.robot
-Resource   ../page_object/submit_page.robot
-Resource   ../page_object/roadmap_page.robot
-Resource   ../page_object/majdanchiki_page.robot
-Resource   ../page_object/partners_page.robot
-Resource   ../page_object/organizaciya_page.robot
-Resource   ../page_object/monitoring_page.robot
-Resource   ../page_object/openprocurement_page.robot
-Resource   ../page_object/for_places.page.robot
-Resource   ../page_object/zahist_page.robot
-Resource   ../page_object/faq_page.robot
+Resource   ../page_object/body_menu/about_page.robot
+Resource   ../page_object/body_menu/bugbounty_page.robot
+Resource   ../page_object/body_menu/information_security_page.robot
+Resource   ../page_object/body_menu/documents_page.robot
+Resource   ../page_object/body_menu/submit_page.robot
+Resource   ../page_object/body_menu/roadmap_page.robot
+Resource   ../page_object/body_menu/majdanchiki_page.robot
+Resource   ../page_object/body_menu/partners_page.robot
+Resource   ../page_object/body_menu/organizaciya_page.robot
+Resource   ../page_object/body_menu/monitoring_page.robot
+Resource   ../page_object/body_menu/openprocurement_page.robot
+Resource   ../page_object/body_menu/for_places.page.robot
+Resource   ../page_object/body_menu/zahist_page.robot
+Resource   ../page_object/body_menu/faq_page.robot
 
 
 Test Setup       Start TestCase

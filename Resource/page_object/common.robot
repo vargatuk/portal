@@ -1,5 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
+Library     String
 
 *** Variables ***
 ${URL}   https://staging.prozorro.gov.ua
