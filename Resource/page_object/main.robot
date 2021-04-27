@@ -54,12 +54,10 @@ ${locator.children_category}                xpath=//button[contains(@class,'cate
     [Documentation]    Вибір категорії закупівель
     [Arguments]   ${main_category_text}    ${children_category_text}
     GO TO   ${MAIN_URL}
-    ${main_category}=    replace string    ${locator.main_category}     TMP_TEXT_LOCATOR    ${main_category_text}
-    ${children_category}=    replace string    ${locator.children_category}     TMP_TEXT_LOCATOR    ${children_category_text}
-    Wait until element is visible    ${locator.main_category}    timeout=20
-    CLICK ELEMENT      ${locator.main_category}
-    Wait until element is visible    ${locator.children_category}    timeout=20
-    CLICK ELEMENT      ${locator.children_category}
+     Wait until element is visible    xpath=//button[contains(@class,'category-purchases__item')][contains(text(),'${main_category_text}')]    timeout=20
+    CLICK ELEMENT      xpath=//button[contains(@class,'category-purchases__item')][contains(text(),'${main_category_text}')]
+    Wait until element is visible    xpath=//button[contains(@class,'category-purchases__link')][contains(text(),'${children_category_text}')]    timeout=20
+    CLICK ELEMENT      xpath=//button[contains(@class,'category-purchases__link')][contains(text(),'${children_category_text}')]
     Wait until element is visible    xpath=//p[@class='search-preview__item--text']    timeout=20
     ${count} =  Get Element Count   xpath=//p[@class='search-preview__item--text']
     log to console    .
@@ -114,9 +112,8 @@ ${locator.children_category}                xpath=//button[contains(@class,'cate
     ${region_menu}=    replace string    ${locator.region_menu}     TMP_TEXT_LOCATOR    ${locator_text}
     Wait until element is visible    ${locator.click_region}
     CLICK ELEMENT      ${locator.click_region}
-    Wait until element is visible    ${locator.region_menu}    timeout=20
-    CLICK ELEMENT      ${locator.region_menu}
-    sleep    5
+    Wait until element is visible    xpath=//ul[@class='filter-popup__preview-list']//li[text()='${locator_text}']    timeout=20
+    CLICK ELEMENT      xpath=//ul[@class='filter-popup__preview-list']//li[text()='${locator_text}']
 
 #Перехід на сторінку регіона по урлу
 #    [Documentation]    Передаємо відповідний регіон і переходимо на сторінку по урлу
@@ -132,8 +129,8 @@ ${locator.children_category}                xpath=//button[contains(@class,'cate
     ${proc_type_menu}=    replace string    ${locator.proc_type_menu}     TMP_TEXT_LOCATOR    ${locator_text}
     Wait until element is visible    ${locator.click_procurement_method_type}
     CLICK ELEMENT      ${locator.click_procurement_method_type}
-    Wait until element is visible    ${locator.proc_type_menu}    timeout=20
-    CLICK ELEMENT      ${locator.proc_type_menu}
+    Wait until element is visible    xpath=//ul[@class='filter-popup__preview-list filter-popup__preview-list_simple']//li[text()='${locator_text}']    timeout=20
+    CLICK ELEMENT      xpath=//ul[@class='filter-popup__preview-list filter-popup__preview-list_simple']//li[text()='${locator_text}']
     sleep    5
 
 Пошук по назві замовника
