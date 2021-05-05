@@ -63,7 +63,10 @@
 # print((a - 1) // b + 1)
 
 #7
-c = a // b
-d = a % b
-c * b + d = a
+# c = a // b
+# d = a % b
+# c * b + d = a
 
+
+A = B × C + D
+0 ≤ D < B
