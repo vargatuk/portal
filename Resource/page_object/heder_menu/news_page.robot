@@ -4,7 +4,7 @@ Library     SeleniumLibrary
 
 *** Variables ***
 ${NEWS_PAGE_URL}    https://staging.prozorro.gov.ua/news
-${locator.title}                    xpath=//h2[@class='section__title']
+${locator.title}                    xpath=//nav[@class='page-header__nav']
 
 
 
