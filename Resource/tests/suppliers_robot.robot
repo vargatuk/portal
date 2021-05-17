@@ -14,3 +14,4 @@ Test Teardown    Finish TestCase
     [Documentation]    перейти на сторінку з інформаціює для постачальника
     [Tags]   suppliers
     Перехід на сторінку для постачальника       Постачальникам
+

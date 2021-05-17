@@ -25,6 +25,10 @@ ${locator.proc_type_menu}                xpath=//ul[@class='filter-popup__previe
 ${locator.main_category}                xpath=//button[contains(@class,'category-purchases__item')][contains(text(),'TMP_TEXT_LOCATOR')]
 ${locator.children_category}                xpath=//button[contains(@class,'category-purchases__link')][contains(text(),'TMP_TEXT_LOCATOR')]
 ${locator.suppliers}                xpath=//li[@class='first-steps-info__list-item']//a[contains(text(), 'Постачальникам')]
+${locator.customers}                xpath=//a[@class='first-steps-info__item-link first-steps-info__item-link_2']
+${locator.monitoring}                xpath=//a[@class='first-steps-info__item-link first-steps-info__item-link_3']
+${locator.majdanchiki_prozorro}                xpath=//a[@class='btn btn_main-bordered']
+
 
 
 
@@ -52,7 +56,7 @@ ${locator.suppliers}                xpath=//li[@class='first-steps-info__list-it
 
 Вибір категорії закупівель
     [Documentation]    Вибір категорії закупівель
-    [Arguments]   ${main_category_text}    ${children_category_text}
+    [Arguments]   ${main_category_text}    ${children_category_text}    ${search_result_text}
     GO TO   ${MAIN_URL}
     Wait until element is visible    xpath=//button[contains(@class,'category-purchases__item')][contains(text(),'${main_category_text}')]    timeout=20
     CLICK ELEMENT      xpath=//button[contains(@class,'category-purchases__item')][contains(text(),'${main_category_text}')]
@@ -60,16 +64,11 @@ ${locator.suppliers}                xpath=//li[@class='first-steps-info__list-it
     CLICK ELEMENT      xpath=//button[contains(@class,'category-purchases__link')][contains(text(),'${children_category_text}')]
     Wait until element is visible    xpath=//p[@class='search-preview__text']    timeout=20
     ${count} =  Get Element Count   xpath=//p[@class='search-preview__text']
-    log to console    .
-    log to console    сколько категорий
-    log to console    ${count}
-    log to console    children
-    log to console    ${children_category_text}
     FOR  ${index}  IN RANGE  ${count}
        ${filter_text}=    GET TEXT      xpath=(//p[@class='search-preview__text'])[${index+1}]
-       Exit For Loop If    '${filter_text.split(' - ')[1]}' in '${children_category_text}'
+       Exit For Loop If    '${search_result_text}' in '${filter_text}'
     END
-    Should Be True   '${filter_text.split(' - ')[-1]}' in '${children_category_text}'    msg='Після переходу на сторінку не співпадають вибрані назви'
+    Should Be True   '${search_result_text}' in '${filter_text}'    msg='Після переходу на сторінку не співпадають вибрані назви'
 
 Перехід на сторінку статусу по урлу
     [Documentation]    Передаємо відповідний статус і переходимо на сторінку по урлу
@@ -148,8 +147,26 @@ ${locator.suppliers}                xpath=//li[@class='first-steps-info__list-it
     [Documentation]    Перехід на сторінку для постачальника
     [Arguments]   ${locator_text}
     GO TO   ${MAIN_URL}
-    ${suppliers}=    replace string    ${locator.suppliers}     TMP_TEXT_LOCATOR    ${locator_text}
-    log to console    ${suppliers}
     Wait until element is visible    ${locator.suppliers}    timeout=20
     CLICK ELEMENT      ${locator.suppliers}
 
+Перехід на сторінку для замовника
+    [Documentation]    Перехід на сторінку для замовника
+    [Arguments]   ${locator_text}
+    GO TO   ${MAIN_URL}
+    Wait until element is visible    ${locator.customers}    timeout=20
+    CLICK ELEMENT      ${locator.customers}
+
+Перехід на сторінку для Громадськості
+    [Documentation]    Перехід на сторінку для Громадськості
+    [Arguments]   ${locator_text}
+    GO TO   ${MAIN_URL}
+    Wait until element is visible    ${locator.monitoring}    timeout=20
+    CLICK ELEMENT      ${locator.monitoring}
+
+Перехід на сторінку Майданчики Prozorro
+    [Documentation]    Перехід на сторінку Майданчики Prozorro
+    [Arguments]   ${locator_text}
+    GO TO   ${MAIN_URL}
+    Wait until element is visible    ${locator.majdanchiki_prozorro}    timeout=20
+    CLICK ELEMENT      ${locator.majdanchiki_prozorro}
