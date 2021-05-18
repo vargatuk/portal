@@ -28,6 +28,7 @@ ${locator.suppliers}                xpath=//li[@class='first-steps-info__list-it
 ${locator.customers}                xpath=//a[@class='first-steps-info__item-link first-steps-info__item-link_2']
 ${locator.monitoring}                xpath=//a[@class='first-steps-info__item-link first-steps-info__item-link_3']
 ${locator.majdanchiki_prozorro}                xpath=//a[@class='btn btn_main-bordered']
+${locator.placeholder}                xpath=//form[@class='search-text']
 
 
 
@@ -170,3 +171,14 @@ ${locator.majdanchiki_prozorro}                xpath=//a[@class='btn btn_main-bo
     GO TO   ${MAIN_URL}
     Wait until element is visible    ${locator.majdanchiki_prozorro}    timeout=20
     CLICK ELEMENT      ${locator.majdanchiki_prozorro}
+
+Перевірка наявності критеріїв у тендері
+    [Documentation]    Перевірка наявності критеріїв у тендері
+    [Arguments]   ${locator_text}
+    GO TO   ${MAIN_URL}
+    Wait until element is visible    ${locator.click_procurement_method_type}    timeout=20
+    CLICK ELEMENT      ${locator.click_procurement_method_type}
+    Wait until element is visible    ${locator.click_procurement_method_type}    timeout=20
+    CLICK ELEMENT      ${locator.click_procurement_method_type}
+    Wait until element is visible    ${locator.placeholder}    timeout=20
+    CLICK ELEMENT      ${locator.placeholder}
